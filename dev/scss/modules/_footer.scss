@@ -1,0 +1,33 @@
+.footer {
+    padding: 55px 139px 68px 55px;
+    &__logo {
+        padding-bottom: 47.51px;
+        &-wrapbear {
+            width: 48px;
+            height: 53px;
+            margin-right: 8px;
+        }
+        &-text {
+            width: 132px;
+            height: 39px;
+        }
+    }
+    &__center {
+        &-item {
+            padding: 13px 0 13px 20px;
+        }
+    }
+    &__preview {
+        width: 403px;
+        height: 110px;
+    }
+    &__right {
+        &-box {
+            display: flex;
+            padding-bottom: 13px;
+        }
+        &-title {
+            padding-right: 8px;
+        }
+    }
+}

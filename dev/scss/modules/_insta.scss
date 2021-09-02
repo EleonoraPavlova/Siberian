@@ -1,0 +1,35 @@
+.insta {
+    padding-bottom: 128px;
+    background-image: url("../assets/images/bg-insta.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__heading {
+        padding: 94px 0 65px 53px;
+    }
+    &__imgwrap {
+        overflow: hidden;
+        width: 254px;
+        height: 252px;
+        &_desc {
+            position: relative;
+        }
+        &:hover {
+            .insta__box-text {
+                display: block;
+            }
+        }
+    }
+    &__box {
+        &-text {
+            display: none;
+            padding: 30px 20px 0 29px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(47, 128, 237, 0.8);
+        }
+    }
+}
