@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    background-color: $color-light-blue;
+}
+
+a {
+    text-decoration: none;
+    color: $color-woodsmoke;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%; // це для того, щоб картинка не іскажалась при різних розширенням
+    height: auto;
+}
+.bg-white {
+    background-color: $color-white;
+}
+.bg-page {
+    background-color: $color-alice_blue;
+    padding: 0 52px;
+}
+
+.text-light {
+    font-family: "Nunito Thin";
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    &_gray {
+        color: $color-dark-gray;
+    }
+    &_blue {
+        color: $color-royal-blue;
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

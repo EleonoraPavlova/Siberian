@@ -1,0 +1,14 @@
+.banner {
+    &__main-text {
+        padding: 0 30px;
+    }
+    &__choose {
+        background-color: $color-light-blue;
+        flex: 1;
+        border-radius: 5px;
+        height: 310px;
+    }
+    &__img {
+        height: 22px;
+    }
+}

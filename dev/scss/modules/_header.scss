@@ -1,0 +1,60 @@
+.header {
+    &__logo {
+        &-wrapbear {
+            width: 41px;
+            height: 45.25px;
+            margin-right: 11.34px;
+        }
+    }
+    &-text {
+        width: 171.19px;
+        height: 33.33px;
+    }
+    &__input-holder {
+        flex: 1;
+        position: relative;
+        margin: 0 38px;
+    }
+    &__input {
+        border-radius: 30px;
+        border: 3px solid #ededed;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        padding-left: 28px;
+        &:hover {
+            border-color: $color-royal-blue;
+        }
+    }
+    &__button {
+        position: absolute;
+        right: 31px;
+        top: 15px;
+        background-color: transparent;
+        border: none;
+        width: 19px;
+        height: 19px;
+    }
+    &__basketwrap {
+        width: 29px;
+        height: 28px;
+    }
+    &__basket-circle {
+        margin-right: 24px;
+        border-radius: 50%;
+        border: 3px solid #ededed;
+        width: 75px;
+        height: 75px;
+        background-color: transparent;
+        &:hover {
+            border: 3px solid $color-royal-blue;
+        }
+    }
+}
+.text-bold-black {
+    font-family: "Montserrat medium";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+}
