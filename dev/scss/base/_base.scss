@@ -16,6 +16,7 @@ body {
 
 body {
     position: relative;
+    background-color: $color-light-blue;
 }
 
 a {
@@ -79,6 +80,20 @@ button {
     color: $color-white;
     &_black {
         color: $color-dark;
+    }
+}
+
+.text-light {
+    font-family: "Nunito Thin";
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    &_gray {
+        color: $color-dark-gray;
+    }
+    &_blue {
+        color: $color-royal-blue;
     }
 }
 

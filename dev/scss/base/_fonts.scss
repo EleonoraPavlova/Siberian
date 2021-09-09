@@ -4,6 +4,7 @@
     font-style: normal;
     font-weight: 200;
     src: url("../assets/fonts/nunito/nunito-v16-latin-200.woff2") format("woff2"),
+        // путь относительно папки build
         url("../assets/fonts/nunito/nunito-v16-latin-200.woff") format("woff");
 }
 
