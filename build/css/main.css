@@ -66,6 +66,7 @@ body {
 
 body {
   position: relative;
+  background-color: #e5eff9;
 }
 
 a {
@@ -129,6 +130,22 @@ button {
 
 .text-corner_black {
   color: #020303;
+}
+
+.text-light {
+  font-family: "Nunito Thin";
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+
+.text-light_gray {
+  color: #333333;
+}
+
+.text-light_blue {
+  color: #2f80ed;
 }
 
 .flex {
@@ -462,6 +479,10 @@ button {
 
 .banner__menu-return {
   padding: 30px 0;
+}
+
+.banner__main-text {
+  padding: 0 30px;
 }
 
 .banner__choose {
