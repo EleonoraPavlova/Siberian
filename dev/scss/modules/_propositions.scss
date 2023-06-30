@@ -1,0 +1,82 @@
+.propositions {
+    position: relative;
+    &__item {
+        padding: 0 30px 54.5px 30px;
+        &:hover {
+            color: $color-royal-blue;
+        }
+    }
+    &__grid {
+        &:first-child {
+            margin-right: 24px;
+        }
+        &-wrap {
+            margin-bottom: 24px;
+        }
+        &-item {
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            flex: 1;
+            &_blue {
+                background-color: $color-light-blue;
+            }
+            &_green {
+                background-color: $color-light-green;
+            }
+            &_maroon {
+                background-color: $color-early-yellow;
+            }
+            &_yellow {
+                background-color: $color-light-yellow;
+            }
+        }
+    }
+    &__img {
+        width: 162px;
+        height: 145px;
+    }
+    &__box {
+        padding: 0 0 13px 22px;
+        &-topic {
+            padding-bottom: 11px;
+        }
+    }
+    &__corner {
+        position: absolute;
+        transform: rotate(45deg);
+        width: 90px;
+        height: 90px;
+        right: -45px;
+        top: -45px;
+        &-wd {
+            &_green {
+                background-color: $color-lima;
+            }
+            &_maroon {
+                background-color: $color-maroon-flush;
+            }
+            &_yellow {
+                background-color: $color-yellow;
+            }
+        }
+    }
+    &__button {
+        height: 46px;
+        &_green {
+            background-color: $color-lima;
+        }
+        &_maroon {
+            background-color: $color-maroon-flush;
+        }
+        &_yellow {
+            background-color: $color-yellow;
+        }
+        &_gray {
+            background-color: #aeaeae;
+        }
+    }
+    &__more {
+        padding: 6px 0 63px 0;
+    }
+}

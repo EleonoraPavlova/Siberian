@@ -1,0 +1,60 @@
+.wrapper {
+    // @include respond-to(mobile) {
+    //     max-width: 375px;
+    //     padding: 9px 15px;
+    // }
+    // @include respond-to(mobile-bigt) {
+    //     max-width: 600px;
+    //     padding: 10px 28px 7px 20px;
+    // }
+    @include respond-to(tablet) {
+        padding: 0 38px 0 39px;
+    }
+    @include respond-to(desktop) {
+        padding: 0 70px 0 52px;
+    }
+    &-header {
+        @include respond-to(desktop) {
+            padding: 32px 64px 30px 40px;
+        }
+    }
+}
+.top-nav {
+    height: 46px;
+    width: 100%;
+    background-color: $color-royal-blue;
+    &__wrapimg {
+        margin: 13px 7px 16px 21px;
+        width: 16.25px;
+        height: 16.25px;
+    }
+    &__item {
+        padding: 0 20px;
+        &_red {
+            background-color: $color-maroon-flush;
+            width: 107px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+    }
+    &__nav-center {
+        padding-left: -50px;
+    }
+}
+.blue-block {
+    background-color: $color-denim;
+    width: 128px;
+    height: 46px;
+}
+
+.text-style {
+    color: $color-white;
+    font-family: "Nunito bold";
+    font-size: 16px;
+    line-height: 22px;
+    &_bold {
+        font-weight: 800;
+    }
+}

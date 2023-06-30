@@ -1,45 +1,82 @@
 const { src, dest, parallel, series, watch } = require('gulp');
-const sass = require('gulp-sass');
-const browserSync = require('browser-sync').create();
-const prefix = require('gulp-autoprefixer');
 const pug = require('gulp-pug');
+const sass = require('gulp-sass');
+const prefix = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
+const browsersync = require('browser-sync');
 const gulpCopy = require('gulp-copy');
 const del = require('del');
 
-function browser() {
-    browserSync.init({
+var paths = {
+    build: './build/',
+    scss: './dev/scss/',
+    pug: './dev/pug/',
+    js: './dev/js/'
+};
+
+function templates() {
+    return src(paths.pug + 'pages/*.pug')
+        .pipe(plumber())
+        .pipe(pug({ pretty: true }))
+        .pipe(dest('build/'))
+}
+
+function css() {
+    return src(paths.scss + 'pages/*.scss')
+        .pipe(sass({
+            includePaths: [paths.scss],
+            outputStyle: 'expanded'
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7', 'iOS >= 9', 'Safari >= 9', 'Android >= 4.4', 'Opera >= 30'], {
+            cascade: true
+        }))
+        .pipe(dest('build/css'));
+}
+
+function js() {
+    return src(paths.js + '*.js')
+        .pipe(dest('build/js'));
+}
+
+function copyAssets() {
+    return src(['./dev/assets/**/*.*'],
+        del(paths.build + 'assets/**/*'))
+        .pipe(gulpCopy(paths.build + 'assets', { prefix: 2 }));
+}
+
+function copyFavicon() {
+    return src(['./dev/*.ico'],
+        del('build/'))
+        .pipe(dest('build/'));
+}
+
+function browserReload() {
+    return browsersync.reload;
+}
+
+function watchFiles() {
+    watch(paths.scss + '**/*.scss', parallel(css))
+        .on('change', browserReload());
+    watch(paths.js + '*.js', parallel(js))
+        .on('change', browserReload());
+    watch([paths.pug + '**/*.pug'], parallel(templates))
+        .on('change', browserReload());
+    watch('dev/assets/**/*')
+        .on('change', series(copyAssets, css, js, browserReload()));
+}
+
+function browserSync() {
+    browsersync({
         server: {
-            baseDir: './build/'
+            baseDir: paths.build
         },
         notify: false
     });
 }
 
-function templates() {
-    return src('dev/pug/*.pug')
-        .pipe(pug({ pretty: true }))
-        .pipe(dest('build/'))
-}
+const watching = parallel(watchFiles, browserSync);
 
-function watchFiles() {
-    watch("dev/scss/**/*.scss", css);
-    watch(['dev/pug/*.pug', 'dev/pug/chunks/*.pug'], parallel(templates)).on('change', browserSync.reload);
-}
-
-function css() {
-    return src("dev/scss/**/*.scss")
-        .pipe(sass({
-            outputStyle: 'expanded'
-        }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
-        .pipe(dest("build"))
-        .pipe(browserSync.stream());
-}
-
-function copyAssets() {
-    return src('./dev/assets/**/*.*')
-        .pipe(gulpCopy('./build/assets', { prefix: 2 }));
-}
-
+exports.js = js;
 exports.css = css;
-exports.default = series(series(css), parallel(browser, watchFiles, templates, copyAssets));
+exports.build = parallel(copyAssets, copyFavicon, css, js, templates);
+exports.watch = watching;

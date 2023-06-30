@@ -1,0 +1,19 @@
+//MEDIA QUERY
+$breakpoints: (
+    mobile: 375px,
+    mobile-big: 600px,
+    tablet: 768px,
+    desktop: 1400px,
+);
+
+@mixin respond-to($breakpoint) {
+    // Retrieves the value from the key
+    $value: map-get($breakpoints, $breakpoint);
+    // If the key exists in the map
+    @if $value != null {
+        // Prints a media query based on the value
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+}

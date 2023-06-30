@@ -1,0 +1,13 @@
+@import "../base/fonts"; // всегда в первую очередь пишем!
+@import "../utility/variables";
+@import "../utility/mixins";
+@import "../base/base";
+@import "../modules/nav";
+@import "../modules/header";
+@import "../modules/category";
+@import "../modules/banner";
+@import "../modules/propositions";
+@import "../modules/insta";
+@import "../modules/recipes";
+@import "../modules/map";
+@import "../modules/footer";

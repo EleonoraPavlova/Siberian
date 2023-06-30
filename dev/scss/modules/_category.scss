@@ -1,0 +1,25 @@
+.category {
+    border-top: 1px solid $color-gray;
+    padding-left: 52px;
+    &__item {
+        width: 162px;
+        height: 110px;
+        border: 1px solid transparent;
+        border-left: 1px solid $color-gray;
+        &:last-child {
+            border-right: 1px solid $color-gray;
+        }
+        &:hover {
+            border: 1px solid $color-lima;
+        }
+        &-wrap {
+            width: 65px;
+            height: 65px;
+        }
+        &-wrap1 {
+            margin-top: 13px;
+            width: 49px;
+            height: 53px;
+        }
+    }
+}
